@@ -1,0 +1,96 @@
+■Abstract
+
+User: access to / of main to send request form with email and score sheet.
+Admin: access to /admin to confirm requests and create stripe payment page and, 
+       send url of payment url to user manually.
+       (click each request's "to checkout" button, email and order id will apllied to checkout form)
+
+       Here, admin can edit each request's progress.
+
+■Git
+ origin is "C:\Samples\w38_React_Ecommerce_Transposition_SIte\react-ecommerce"
+ PJ: https://github.com/gutiriman/ECforTranspose
+
+■Firebase
+ ID:gutiriman3@gmail.com
+ PW:r~1
+
+　<PJ Name>
+ 01-react-EC
+
+■Stripe
+ ID:intodeep55555@gmail.com
+ PW:R~+
+ CardNum for test:4242-4242-4242-4242
+
+ First of all, payment data includes card info etc. never stored in react or firebase.
+ These front-end and back-end only use session-id passed from strip to communicate with stripe.
+
+ In index.js, it is need to wrap with <Elements stripe={stripePromise}> to use stripe.
+ (.env file should be created and the key for stripe is written here)
+
+ It seems "line_items" should included in the checkout data for Stripe.
+ We also added custom field of "custom_text" for Order_ID to know the customer with given Order_ID has paid.
+ ->result with this custom_text also can be confirmed in stripe Payments page after payment.
+
+ After checkout page appears, you can send this page link to your customer.
+
+■Server
+#if you have a server in backend, this should be done at begging for firebase CloudFuncitons.
+#and in function folder edit index.js for server
+
+ ■Firebase CloudFunctions(backend. In pj folder) *switch to blaze plan)
+ $firebase init -> select Function:Configure a Cloud Functions dir~
+  ->existing project ->01-react-EC ->JavaScript
+  ->Eslint? No -> install dependencies? Yes(firebase.json will be created)
+
+ then, functions folder will be created.Edit you server code here.
+
+ (Initial Setting in functions folder)
+ $npm install express stripe cors (this is sample here)
+ $npm i -D dotenv nodemon
+ change package.json's "start" to nodemon ~
+
+ $npm start
+
+ create .env with stripe api key
+
+  (in index.js)
+  ・add head with "const functions = require("firebase-functions");",
+  ・add bottom with "exports.app = functions.https.onRequest(app);"
+  
+ ■Deploy(in functions folder)
+ disable app.listen for deploying(to detect if it is running on cloud funtion, 
+ use "process.env.FUNCTIONS_EMULATOR"(true if running firebase functions))
+
+ $npm run deploy (defined in package.json for deploy functions only)
+
+ (only once)
+ In GoogleCloudConsole(Not firebase console), with target function,
+ add principals of "allUsers" and assign roles with "Cloud Functions Invoker"
+
+■React
+(Initial Setting)
+ npm i @stripe/react-stripe-js @stripe/stripe-js
+ 
+ create .env with stripe api key
+
+■Firebase Hosting(frontend. In pj folder)
+(initial)
+$firebase init
+ ->hosting(Configure files for Firebase~) ->existing PJ(01-react-EC) ->firebase-recipes ->build
+ ->single page?yes ->with github?no
+
+(after initial)
+$npm run build
+$firebase deploy
+
+
+
+
+
+
+
+
+
+
