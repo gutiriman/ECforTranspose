@@ -18,5 +18,5 @@ app.post('/create-checkout-session', createCheckoutSession);
 //if (process.env.FUNCTIONS_EMULATOR) {//running on firebase this will be true
 exports.app = functions.https.onRequest(app);
 //} else {
-//app.listen(port, () => console.log('server listening on port', port));
+app.listen(port, () => console.log('server listening on port', port));
 //}

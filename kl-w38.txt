@@ -86,6 +86,8 @@ $firebase init
  ->hosting(Configure files for Firebase~) ->existing PJ(01-react-EC) ->firebase-recipes ->build
  ->single page?yes ->with github?no
 
+dont forget changing target url of server side(this case .env of functions dir).
+
 (after initial)
 $npm run build
 $firebase deploy
