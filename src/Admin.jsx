@@ -145,7 +145,7 @@ export default function Admin() {
                            <p>Name: {request.cName}</p>
                            <p>Email: {request.cEmail}</p>
                            <p>OrderID: {request.orderID}</p>
-                           <p>fileUrl: <a href={`${request.fileUrl}`}>fileLink</a></p>
+                           <p>fileUrl: <a href={`${request.fileUrl}`}>{request.filePath}</a></p>
                            <textarea
                               defaultValue={request.progress} onChange={(e) => handleChange("progress", e.target.value, request.id,)}>
                            </textarea>
@@ -156,13 +156,13 @@ export default function Admin() {
                            <div>
                               <button onClick={() => updateReq(request.id, request)}>Apply Changes: "{request.cName}"</button>
                            </div>
-                           <div>
-                              <button onClick={() => toCheckout(request.id)}>To Checkout</button>
-                           </div>
+
                            {viewClosed ?
                               <><button onClick={() => deleteReq(request.id, request.filePath)}>Delete</button></>
                               :
-                              <></>
+                              <>
+                                 <button onClick={() => toCheckout(request.id)}>To Checkout</button>
+                              </>
                            }
                         </div>
                      ))

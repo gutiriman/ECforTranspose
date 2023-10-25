@@ -28,7 +28,7 @@ export default function Main() {
    async function handleSendForm(e) {
       e.preventDefault();
       //confirm input
-      if (!file || !cName || !cEmail || !cRequest) {
+      if (!cName || !cEmail || !cRequest) {
          alert("問い合あせ内容を埋めたうえで提出ください");
          return;
       }
@@ -36,8 +36,9 @@ export default function Main() {
       if (!ans) { return; }
 
       //upload file to storage
+      const orderID = gen4Digit();
       const createdAt = new Date().toLocaleDateString('sv-SE');
-      const path = `requests/${createdAt}-${cName}`
+      const path = `requests/${createdAt}-${cName}-${orderID}`
       const storageRef = ref(storage, `${path}/${file.name}`);
       const uploadTask = uploadBytesResumable(storageRef, file);
       let fileUrl;
@@ -58,7 +59,6 @@ export default function Main() {
                fileUrl = downloadURL;
                //send request with fileurl to firestore
                try {
-                  let orderID = gen4Digit();
                   const ref = collection(firestore, 'requests');
                   await addDoc(ref, { cName, cEmail, cRequest, closed: false, fileUrl, orderID, filePath: storageRef.fullPath, progress: "just requested" });
                   // setCEmail(""); setCName(""); setCRequest(""); *Not Need because navigating to another page later
@@ -90,7 +90,7 @@ export default function Main() {
                   />
                </div>
                <div>
-                  <label>楽譜データ（PDFまたは画像。）※複数ある場合はzip化で選択できます。</label>
+                  <label>楽譜添付（任意。PDFまたは画像データ。）※複数ある場合はzip化で選択できます。</label>
                   <input type="file" onChange={handleChange} accept="/image/*" />
                </div>
                <div>

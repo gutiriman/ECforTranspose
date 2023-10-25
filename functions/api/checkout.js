@@ -1,12 +1,8 @@
 const stripeAPI = require('../stripe');
 
 async function createCheckoutSession(req, res) {
-   let domainUrl;
-   if (process.env.FUNCTIONS_EMULATOR) {
-      domainUrl = process.env.WEB_APP_URL
-   } else {
-      domainUrl = "http://localhost:3000";
-   }
+
+   const domainUrl = process.env.WEB_APP_URL
 
    const { line_items, Order_ID, email } = req.body;
    // check req body has line items

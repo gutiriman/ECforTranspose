@@ -65,16 +65,16 @@ Admin: access to /admin to confirm requests and create stripe payment page and,
   ・add bottom with "exports.app = functions.https.onRequest(app);"
   
  ■Deploy(in functions folder)
- disable app.listen for deploying(to detect if it is running on cloud funtion, 
- use "process.env.FUNCTIONS_EMULATOR"(true if running firebase functions))
-
+ disable app.listen for deploying(to detect if it is running on cloud funtion,
+ and swith WEB_APP_URL in .env of functions
+ 
  $npm run deploy (defined in package.json for deploy functions only)
 
  (only once)
  In GoogleCloudConsole(Not firebase console), with target function,
  add principals of "allUsers" and assign roles with "Cloud Functions Invoker"
 
-■React
+■React use stripe
 (Initial Setting)
  npm i @stripe/react-stripe-js @stripe/stripe-js
  
@@ -91,12 +91,6 @@ dont forget changing target url of server side(this case .env of functions dir).
 (after initial)
 $npm run build
 $firebase deploy
-
-
-
-
-
-
 
 
 
