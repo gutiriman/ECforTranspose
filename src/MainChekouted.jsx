@@ -4,8 +4,8 @@ export default function MainCheckouted() {
    return (
       <div>
          <div>
-            ありがとうございます。
-            後日メールにて、PDFでお送りします。
+            ご購入いただき、ありがとうございます。
+            作業完了後メールで納品させていただきます。
          </div>
          <Link to="/"><button>戻る</button></Link>
       </div>

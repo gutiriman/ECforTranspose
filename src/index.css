@@ -1,13 +1,338 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --black: #212023;
+  --gray: #e0e5dd;
+  --brown: #5f4743;
+  --brown2: #7a6865;
+  --button-clor: #74c05d;
+  --body-color: rgb(245, 240, 240);
+  --font-form: 16px;
+  --font-hero-title: 26px;
+  --font-hero-sub: 16px;
+  --font-label: 14px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background-color: var(--body-color);
+  max-width: 900px;
+  /*center when exceed max-width*/
+  margin: 0 auto;
+  font-family: 'Zen Maru Gothic', serif;
+  color: var(--black);
+}
+
+h1 {
+  font-size: var(--font-hero-title);
+}
+
+h2 {
+  margin: 60px 0 30px;
+  border-left: 10px solid var(--brown2);
+  padding-left: 7px;
+}
+
+h3 {
+  margin: 20px 0 0 0;
+}
+
+p {
+  line-height: 1.5em;
+  margin: 10px 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--brown);
+  font-weight: bold;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+span {
+  color: var(--brown);
+}
+
+label {
+  font-size: var(--font-label);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header .logo {
+  display: flex;
+  align-items: center;
+}
+
+.header img {
+  margin-top: 5px;
+  width: 35px;
+  height: 35px;
+}
+
+.header h1 {
+  margin-left: 10px;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.header a {
+  /*<a> is inline element so the margin will not work.
+  To do that, it should be inline-block*/
+  display: inline-block;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.hero {
+  background-image: linear-gradient(0.25turn, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), url("https://firebasestorage.googleapis.com/v0/b/react-ec-5b0b3.appspot.com/o/admin%2FscoreIMG-min.jpg?alt=media&token=32bf743e-89a3-4f5a-9079-55c38583eb15&_gl=1*jpi8ga*_ga*MTUzMzE0MTgwOC4xNjUwNjcyNzM3*_ga_CW55HF8NVT*MTY5ODk2NjAwOS40MS4xLjE2OTg5NjYyNTUuNjAuMC4w");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 330px;
+  margin: 0 auto;
+  /*vertically centerize text inner this block*/
+  display: flex;
+  align-items: center;
+}
+
+.hero-text {
+  color: white;
+  display: flex;
+  /*align center vertically*/
+  align-items: center;
+  /*align center hirizontally*/
+  justify-content: center;
+}
+
+.hero-text-left {
+  text-align: center;
+  flex-basis: 40%;
+  font-size: var(--font-hero-title);
+  font-family: 'Shippori Mincho B1', serif;
+}
+
+.hero-text-right {
+  margin: 0 15px;
+  flex-basis: 60%;
+  font-size: var(--font-hero-sub);
+  /*font-weight: 600;*/
+  letter-spacing: 0.1em;
+}
+
+/*contact*/
+.contact {
+  margin-top: 30px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.step {
+  flex-basis: 55%;
+  margin: 0 auto;
+}
+
+.step h3 {
+  margin-left: 5px;
+}
+
+.step p,
+.price p {
+  margin-left: 10px;
+  font-family: 'Shippori Mincho B1', serif;
+  letter-spacing: 0;
+  line-height: 1.4rem;
+}
+
+.circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--brown2);
+  color: white;
+  text-align: center;
+  /*vertically center(almost same with height)*/
+  line-height: 37px;
+}
+
+/*form*/
+input,
+textarea {
+  outline: none;
+}
+
+#feedback-page {
+  text-align: center;
+}
+
+#form-div {
+  background-color: var(--gray);
+  border-radius: 10px;
+  padding: 15px 30px;
+  width: 300px;
+  margin: 30px 30px 0 45px;
+}
+
+.form {
+  text-align: center;
+}
+
+.feedback-input {
+  color: var(--black);
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: var(--font-form);
+  border-radius: 0;
+  line-height: 18px;
+  background-color: #fbfbfb;
+  padding: 5px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 3px solid rgba(0, 0, 0, 0);
+}
+
+textarea {
+  width: 100%;
+  height: 120px;
+  line-height: 100%;
+  resize: vertical;
+}
+
+#form-image {
+  letter-spacing: 0.1rem;
+  margin-bottom: 20px;
+}
+
+.button-blue {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  width: 65%;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  background-color: var(--button-clor);
+  color: white;
+  font-size: 18px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transition: all 0.3s;
+  margin: 0 auto;
+  font-weight: 700;
+  opacity: 0.8;
+}
+
+.button-blue:hover {
+  opacity: 1.0;
+}
+
+/* file upload button */
+input[type="file"]::file-selector-button {
+  border-radius: 4px;
+  padding: 0 12px;
+  height: 40px;
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
+  margin-right: 16px;
+  transition: background-color 200ms;
+}
+
+/* file upload button hover state */
+input[type="file"]::file-selector-button:hover {
+  background-color: #f3f4f6;
+}
+
+/* file upload button active state */
+input[type="file"]::file-selector-button:active {
+  background-color: #e5e7eb;
+}
+
+.price .price-explain {
+  margin-top: 40px;
+}
+
+.price-wrapper {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  /*align center vertically*/
+  align-items: center;
+}
+
+.working {
+  margin-top: 30px;
+  text-align: center;
+  /*sum = 100% with .price-left */
+  width: 45%;
+}
+
+.working img {
+  width: 70%;
+  object-fit: contain;
+  transform: rotateZ(-2deg);
+  filter: drop-shadow(5px 5px 5px #aaa);
+}
+
+.working p {
+  font-family: 'Zen Maru Gothic', serif;
+  font-size: var(--font-label);
+}
+
+.price-left {
+  margin-left: 5px;
+  width: 50%;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+/*price list*/
+ul.price_list {
+  list-style: none;
+  column-count: 1;
+  column-gap: 40px;
+  margin: 5px;
+  padding: 0;
+}
+
+ul.price_list li {
+  display: inline-flex;
+  padding-bottom: 8px;
+  border-bottom: var(--gray) 2px dotted;
+  margin-bottom: 8px;
+  width: 100%;
+  color: var(--brown);
+  font-weight: bold;
+}
+
+ul.price_list li strong {
+  font-weight: normal;
+  color: #333;
+  margin-right: auto;
+}
+
+.footer {
+  margin-top: 30px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 580px) {
+  #form-div {
+    left: 3%;
+    margin-right: 3%;
+    width: 88%;
+    margin-left: 0;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
 }
