@@ -102,7 +102,10 @@ PW:r~
 Add cuctom domain in firebase hosting(this case, without checking redirect ~).
   then, get TXT record and A record and copy it to お名前.com(add to DNS setting of domain).
   then, verify.
-After verify, it would take an hour for https connection.
+ After verify, it would take an hour for https connection.
+
+After adding custom domain add "Authorized domains" of Authentication service in FIrebase.
+(otherwise you cant use auth from your website after changing its domain)
 
 ■Google Search conosole.
 
