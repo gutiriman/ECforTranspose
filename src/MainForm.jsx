@@ -89,7 +89,7 @@ export default function MainForm() {
                      value={cEmail}
                   />
                </p>
-               <label htmlFor="form-image">ファイル選択(任意。複数ある場合はzip化。)</label>
+               <label htmlFor="form-image">ファイル選択(※任意。複数ある場合はzip化。)</label>
                <input type="file" id="form-image" onChange={handleChange} accept="/image/*" />
 
                <p className="text">

@@ -4,6 +4,7 @@ export default function MainCheckouted() {
    return (
       <div>
          <div>
+            <br />
             ご購入いただき、ありがとうございます。
             作業完了後メールで納品させていただきます。
          </div>

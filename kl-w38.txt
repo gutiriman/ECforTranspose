@@ -93,6 +93,26 @@ dont forget changing target url of server side(this case .env of functions dir).
 $npm run build
 $firebase deploy --only hosting
 
+■Domain
+<お名前.com>
+ID:55527029
+PW:r~
+ ->"tscore.online"
+
+Add cuctom domain in firebase hosting(this case, without checking redirect ~).
+  then, get TXT record and A record and copy it to お名前.com(add to DNS setting of domain).
+  then, verify.
+After verify, it would take an hour for https connection.
+
+■Google Search conosole.
+
+Add property -> Domain(Type tscore.online) -> get TXT info and copy it to new TXT record in お名前.com
+and get verified.
+
+Go to URL inspection: https://tscore.online.
+ "TEST LIVE URL" make sure "URL is availabe to Google" 
+ then, REQUEST INDEXING.
+
 
 
 

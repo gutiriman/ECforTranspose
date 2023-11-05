@@ -6,9 +6,10 @@ export default function MainThanks() {
    const name = location.state.name
    return (
       <div>
-         <div>
-            {name}様　お問い合わせいただき、ありがとうごいます。
-            のちほど、お見積りの結果について、いただきましたメールアドレス宛に返信させていただきます。
+         <div><br />
+            {name}様　<br /><br />お問い合わせいただきありがとうごいます。
+            後ほど、お見積りの結果についていただきましたメールアドレス宛に返信させていただきます。<br />
+            引き続き、よろしくお願いいたします。
          </div>
          <Link to="/"><button>戻る</button></Link>
       </div>
