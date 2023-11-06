@@ -10,7 +10,9 @@ Admin: access to /admin to confirm requests and create stripe payment page and,
 ■Git
  origin is "C:\Samples\w38_React_Ecommerce_Transposition_SIte\react-ecommerce"
  PJ: https://github.com/gutiriman/ECforTranspose
-
+ 
+ (ignore .env)
+ add "/.env" to gitignore files in frontend and backend.
 
  (In react-ecommerce folder)
  $git add .
