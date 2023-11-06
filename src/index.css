@@ -335,6 +335,20 @@ ul.price_list li strong {
     margin: 0 5px;
   }
 
+  .header {
+    background-color: var(--body-color);
+    position: fixed;
+    top: 0;
+    /*same as body margin*/
+    left: 5px;
+    right: 5px;
+  }
+
+  .hero {
+    /*for fixed header*/
+    margin-top: 90px;
+  }
+
   .hero-text {
     flex-direction: column;
   }
@@ -354,6 +368,10 @@ ul.price_list li strong {
     margin-left: 0;
     padding-left: 3%;
     padding-right: 3%;
+  }
+
+  .button-blue {
+    opacity: 1.0;
   }
 
   .price-wrapper {

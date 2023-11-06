@@ -11,7 +11,7 @@ export default function Main() {
                <h1>T<span>S</span>core</h1>
             </div>
             <div>
-               <a href="maito:gutiriman3@gmail.com">メールお問合せ</a>
+               <a href="mailto:gutiriman3@gmail.com">メールお問合せ</a>
             </div>
          </header>
 
