@@ -131,6 +131,10 @@ label {
   align-items: flex-end;
 }
 
+.contact label {
+  letter-spacing: -0.1rem;
+}
+
 .step {
   flex-basis: 55%;
   margin: 0 auto;
@@ -327,6 +331,22 @@ ul.price_list li strong {
 }
 
 @media only screen and (max-width: 580px) {
+  body {
+    margin: 0 5px;
+  }
+
+  .hero-text {
+    flex-direction: column;
+  }
+
+  .hero-text-right {
+    width: 70%;
+  }
+
+  .contact {
+    flex-direction: column;
+  }
+
   #form-div {
     left: 3%;
     margin-right: 3%;
@@ -334,5 +354,17 @@ ul.price_list li strong {
     margin-left: 0;
     padding-left: 3%;
     padding-right: 3%;
+  }
+
+  .price-wrapper {
+    flex-direction: column;
+  }
+
+  .price-left {
+    width: 90%;
+  }
+
+  .working {
+    display: none;
   }
 }
